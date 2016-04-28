@@ -13,7 +13,12 @@
             if (controller.order === 'asc') controller.order = 'desc';
             else controller.order = 'asc';
             //Fetch list again to reorder
-            controller.defaultListing();
+            if (controller.search) {
+                controller.doSearch();
+            } else {
+                controller.defaultListing();
+            }
+            
         };
 
         controller.doSearch = function () {
@@ -22,12 +27,14 @@
             
             repository.query({ order:controller.order,search: controller.search },
                 function (data) {
-                controller.images = data;
+                 controller.images = data;
                 },
-            function (response) {
-                //Get status message
-                controller.result = response.data.message + "\r\n";
-            });
+                function (response) {
+                    //Get status message
+                    if (response.data != null) {
+                        controller.result = response.data.message + "\r\n";
+                    }
+                });
         };
 
         controller.defaultListing = function() {
