@@ -18,18 +18,18 @@
             } else {
                 controller.defaultListing();
             }
-            
+
         };
 
-        controller.doSearch = function () {
+        controller.doSearch = function() {
             //Reset result message
             controller.result = '';
-            
-            repository.query({ order:controller.order,search: controller.search },
-                function (data) {
-                 controller.images = data;
+
+            repository.query({ order: controller.order, search: controller.search },
+                function(data) {
+                    controller.images = data;
                 },
-                function (response) {
+                function(response) {
                     //Get status message
                     if (response.data != null) {
                         controller.result = response.data.message + "\r\n";
@@ -39,7 +39,7 @@
 
         controller.defaultListing = function() {
             repository.query({ order: controller.order },
-                function (data) {
+                function(data) {
                     controller.images = data;
                 });
         };

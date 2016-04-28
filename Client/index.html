@@ -45,7 +45,11 @@
                             Creator
                         </th>
                         <th>
-                            <a ng-click="controller.changeOrder()" class="linkbutton"> Creation date</a>
+                            <a ng-click="controller.changeOrder()" class="linkbutton">
+                                Creation date
+                                <i class="glyphicon glyphicon-triangle-top" ng-show="controller.order=='desc'"></i>
+                                <i class="glyphicon glyphicon-triangle-bottom" ng-show="controller.order=='asc'"></i>
+                            </a>
 
                         </th>
                     </tr>
