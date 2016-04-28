@@ -12,7 +12,7 @@ namespace HomeAssignment.Models
     {
         public List<Image> FetchAllImage()
         {
-            var dataPath = HostingEnvironment.MapPath(@"~/App_Data/product.json");
+            var dataPath = HostingEnvironment.MapPath(@"~/App_Data/prezis.json");
 
             var dataText = File.ReadAllText(dataPath);
 
