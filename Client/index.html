@@ -1,49 +1,53 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>Image gallery(Prezi home assignment)</title>
-    <!-- libraries -->
-    <script src="Scripts/angular.js"></script>
-    <script src="Scripts/angular-resource.js"></script>
+    <head>
+        <title>Image gallery(Prezi home assignment)</title>
+        <!-- libraries -->
+        <script src="Scripts/angular.js"> </script>
+        <script src="Scripts/angular-resource.js"> </script>
 
-    <script src="Scripts/jquery-2.0.3.js"></script>
-    <script src="Scripts/bootstrap.js"></script>
-    <!-- application -->
-    <script src="app/services.js"></script>
-    <script src="app/repository.js"></script>
-    <script src="app/app.js"></script>
-    <script src="app/galleryController.js"></script>
-    <!-- style -->
-    <link href="Content/bootstrap.css" rel="stylesheet" />
-</head>
+        <script src="Scripts/jquery-2.0.3.js"> </script>
+    
+        <!-- application -->
+        <script src="app/services.js"> </script>
+        <script src="app/repository.js"> </script>
+        <script src="app/app.js"> </script>
+        <script src="app/galleryController.js"> </script>
+
+        <!-- style -->
+        <link href="Content/bootstrap.css" rel="stylesheet" />
+        <link href="Content/style.css" rel="stylesheet" />
+    </head>
     <body ng-app="gallery">
-        <div ng-controller="galleryController as controller">
-            <table>
+        <div ng-controller="galleryController as controller" class="container">
+           
+            <table class="table  table-striped">
                 <tr>
-                    <td>thumbnail</td>
-                    <td> title</td>
-                    <td>
-                        creator
-                    </td>
-                    <td>
-                        creation date
+                    <th>Thumbnail</th>
+                    <th> Title</th>
+                    <th>
+                        Creator
+                    </th>
+                    <th>
+                        Creation date
 
-                    </td>
+                    </th>
                 </tr>
-                
+
                 <tr ng-repeat="image in controller.images">
-                    <td>{{image.thumbnail}}</td>
+                    <td><img ng-src="{{image.thumbnail}}" alt="{{image.title}}" class="thumbnail"></td>
                     <td> {{image.title}}</td>
                     <td>
                         {{image.creator.name}}
                     </td>
                     <td>
-                        {{image.createdAt}} 
+                        {{image.createdAt}}
 
                     </td>
                 </tr>
 
             </table>
         </div>
+           
     </body>
 </html>
