@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using Newtonsoft.Json.Serialization;
 
 namespace HomeAssignment
 {
@@ -13,7 +14,14 @@ namespace HomeAssignment
 
             // Web API routes
             config.MapHttpAttributeRoutes();
+            
+            //fomat Pascal case to camel case for stand naming in angular js
+            config.Formatters.JsonFormatter.SerializerSettings.ContractResolver=
+                new CamelCasePropertyNamesContractResolver();
 
+            //Cross origin support
+            config.EnableCors();
+            
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",

@@ -53,10 +53,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HomeAssignment\HomeAssignment.csproj">
+    <ProjectReference Include="..\HomeAssignment\Api.csproj">
       <Project>{b13a18d8-45c3-4e27-b426-254c94b867e3}</Project>
       <Name>HomeAssignment</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Collections.Generic;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using HomeAssignment.Models;
 
 namespace HomeAssignment.Controllers
 {
+    [EnableCors("*", "*", "*")]
     public class GalleryController : ApiController
     {
         // GET api/gallery
@@ -22,7 +20,5 @@ namespace HomeAssignment.Controllers
         {
             return "value";
         }
-
-       
     }
 }

@@ -9,11 +9,41 @@
     <script src="Scripts/jquery-2.0.3.js"></script>
     <script src="Scripts/bootstrap.js"></script>
     <!-- application -->
-    <script src="Scripts/app/app.js"></script>
+    <script src="app/services.js"></script>
+    <script src="app/repository.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/galleryController.js"></script>
     <!-- style -->
     <link href="Content/bootstrap.css" rel="stylesheet" />
 </head>
-<body>
+    <body ng-app="gallery">
+        <div ng-controller="galleryController as controller">
+            <table>
+                <tr>
+                    <td>thumbnail</td>
+                    <td> title</td>
+                    <td>
+                        creator
+                    </td>
+                    <td>
+                        creation date
 
-</body>
+                    </td>
+                </tr>
+                
+                <tr ng-repeat="image in controller.images">
+                    <td>{{image.thumbnail}}</td>
+                    <td> {{image.title}}</td>
+                    <td>
+                        {{image.creator.name}}
+                    </td>
+                    <td>
+                        {{image.createdAt}} 
+
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+    </body>
 </html>
