@@ -10,9 +10,15 @@
         controller.search = '';
 
         controller.doSearch = function () {
-            alert(controller.search);
-            repository.query({ search: controller.search }, function(data) {
+            //Reset result message
+            controller.result = '';
+            repository.query({ search: controller.search },
+                function (data) {
                 controller.images = data;
+                },
+            function (response) {
+                //Get status message
+                controller.result = response.data.message + "\r\n";
             });
         };       
        

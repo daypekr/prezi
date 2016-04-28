@@ -10,16 +10,20 @@ namespace HomeAssignment.Controllers
     public class GalleryController : ApiController
     {
         // GET api/gallery
-        public IEnumerable<Image> Get()
+        public IHttpActionResult Get()
         {
             var repository = new ImageRepository();
-            return repository.FetchAllImage();
+            return Ok(repository.FetchAllImage().AsQueryable());
         }
-        public IEnumerable<Image> Get(string search)
+        public IHttpActionResult Get(string search)
         {
+            if (string.IsNullOrEmpty(search))
+            {
+                return BadRequest("Search term cannot be empty.");
+            }
             var repository = new ImageRepository();
             var images= repository.FetchAllImage();
-            return images.Where(p => p.Title.Contains(search));
+            return Ok(images.Where(p => p.Title.Contains(search)).AsQueryable());
         }
         
     }
