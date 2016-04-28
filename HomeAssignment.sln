@@ -5,8 +5,6 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "HomeAssignment\Api.csproj", "{B13A18D8-45C3-4E27-B426-254C94B867E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeAssignmentTest", "HomeAssignmentTest\HomeAssignmentTest.csproj", "{986525D1-6B23-4601-B563-59ACF4A7196A}"
-EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Client", "http://localhost:28395", "{309335F4-4F9F-4D38-AA3F-4F79CB585F42}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
@@ -39,10 +37,6 @@ Global
 		{B13A18D8-45C3-4E27-B426-254C94B867E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B13A18D8-45C3-4E27-B426-254C94B867E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B13A18D8-45C3-4E27-B426-254C94B867E3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{986525D1-6B23-4601-B563-59ACF4A7196A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{986525D1-6B23-4601-B563-59ACF4A7196A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{986525D1-6B23-4601-B563-59ACF4A7196A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{986525D1-6B23-4601-B563-59ACF4A7196A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{309335F4-4F9F-4D38-AA3F-4F79CB585F42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{309335F4-4F9F-4D38-AA3F-4F79CB585F42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{309335F4-4F9F-4D38-AA3F-4F79CB585F42}.Release|Any CPU.ActiveCfg = Debug|Any CPU
