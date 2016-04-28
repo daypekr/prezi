@@ -12,6 +12,7 @@ namespace HomeAssignment.Controllers
         {
             ViewBag.Title = "Home Page";
 
+
             return View();
         }
     }
