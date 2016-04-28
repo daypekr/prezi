@@ -16,38 +16,53 @@
 
         <!-- style -->
         <link href="Content/bootstrap.css" rel="stylesheet" />
+        
         <link href="Content/style.css" rel="stylesheet" />
     </head>
     <body ng-app="gallery">
         <div ng-controller="galleryController as controller" class="container">
-           
-            <table class="table  table-striped">
-                <tr>
-                    <th>Thumbnail</th>
-                    <th> Title</th>
-                    <th>
-                        Creator
-                    </th>
-                    <th>
-                        Creation date
+            <div class="row">
+                <div  class="col-md-7">
+                    <h2>Gallery</h2>
+                </div>
+                <div id="custom-search-input" class="col-md-5">
+                    <div class="input-group">
+                        <input type="text" class="form-control input-md" placeholder="Search by Title" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-info btn-lg" type="button">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+                <table class="table  table-striped">
+                    <tr>
+                        <th>Thumbnail</th>
+                        <th> Title</th>
+                        <th>
+                            Creator
+                        </th>
+                        <th>
+                            Creation date
 
-                    </th>
-                </tr>
+                        </th>
+                    </tr>
 
-                <tr ng-repeat="image in controller.images">
-                    <td><img ng-src="{{image.thumbnail}}" alt="{{image.title}}" class="thumbnail"></td>
-                    <td> {{image.title}}</td>
-                    <td>
-                        {{image.creator.name}}
-                    </td>
-                    <td>
-                        {{image.createdAt}}
+                    <tr ng-repeat="image in controller.images">
+                        <td><img ng-src="{{image.thumbnail}}" alt="{{image.title}}" class="thumbnail"></td>
+                        <td> {{image.title}}</td>
+                        <td>
+                            {{image.creator.name}}
+                        </td>
+                        <td>
+                            {{image.createdAt}}
 
-                    </td>
-                </tr>
+                        </td>
+                    </tr>
 
-            </table>
-        </div>
+                </table>
+            </div>
            
     </body>
 </html>
