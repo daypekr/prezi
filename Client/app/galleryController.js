@@ -8,11 +8,19 @@
         var controller = this;
 
         controller.search = '';
+        controller.order = 'asc';
+        controller.changeOrder = function() {
+            if (controller.order === 'asc') controller.order = 'desc';
+            else controller.order = 'asc';
+            //Fetch list again to reorder
+            controller.defaultListing();
+        };
 
         controller.doSearch = function () {
             //Reset result message
             controller.result = '';
-            repository.query({ search: controller.search },
+            
+            repository.query({ order:controller.order,search: controller.search },
                 function (data) {
                 controller.images = data;
                 },
@@ -20,12 +28,15 @@
                 //Get status message
                 controller.result = response.data.message + "\r\n";
             });
-        };       
-       
-        repository.query( function(data) {
-            controller.images = data;
-        });
+        };
 
+        controller.defaultListing = function() {
+            repository.query({ order: controller.order },
+                function (data) {
+                    controller.images = data;
+                });
+        };
 
+        controller.defaultListing();
     }
 }());
