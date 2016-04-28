@@ -27,9 +27,9 @@
                 </div>
                 <div id="custom-search-input" class="col-md-5">
                     <div class="input-group">
-                        <input type="text" class="form-control input-md" placeholder="Search by Title" />
+                        <input type="text" class="form-control input-md" placeholder="Search by Title" ng-model="controller.search" />
                         <span class="input-group-btn">
-                            <button class="btn btn-info btn-lg" type="button">
+                            <button class="btn btn-info btn-lg" type="button" ng-click="controller.doSearch()">
                                 <i class="glyphicon glyphicon-search"></i>
                             </button>
                         </span>
