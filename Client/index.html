@@ -16,11 +16,12 @@
 
         <!-- style -->
         <link href="Content/bootstrap.css" rel="stylesheet" />
-        
         <link href="Content/style.css" rel="stylesheet" />
     </head>
     <body ng-app="gallery">
         <div ng-controller="galleryController as controller" class="container">
+            
+            <!-- title and search box-->
             <div class="row">
                 <div  class="col-md-7">
                     <h2>Gallery</h2>
@@ -36,38 +37,43 @@
                     </div>
                 </div>
             </div>
+            <!--End: title and search box-->
+            
+            <!-- Error message-->
             <div ng-show="controller.result">{{controller.result}}</div>
-                <table class="table  table-striped">
-                    <tr>
-                        <th>Thumbnail</th>
-                        <th> Title</th>
-                        <th>
-                            Creator
-                        </th>
-                        <th>
-                            <a ng-click="controller.changeOrder()" class="linkbutton">
-                                Creation date
-                                <i class="glyphicon glyphicon-triangle-top" ng-show="controller.order=='desc'"></i>
-                                <i class="glyphicon glyphicon-triangle-bottom" ng-show="controller.order=='asc'"></i>
-                            </a>
+            <!-- End: Error message-->
+            
+            <!-- Data table-->
+            <table class="table  table-striped">
+                <tr>
+                    <th>Thumbnail</th>
+                    <th> Title</th>
+                    <th>
+                        Creator
+                    </th>
+                    <th>
+                        <a ng-click="controller.changeOrder()" class="linkbutton">
+                            Creation date
+                            <i class="glyphicon glyphicon-triangle-top" ng-show="controller.order=='desc'"></i>
+                            <i class="glyphicon glyphicon-triangle-bottom" ng-show="controller.order=='asc'"></i>
+                        </a>
 
-                        </th>
-                    </tr>
+                    </th>
+                </tr>
 
-                    <tr ng-repeat="image in controller.images">
-                        <td><img ng-src="{{image.thumbnail}}" alt="{{image.title}}" class="thumbnail"></td>
-                        <td> {{image.title}}</td>
-                        <td>
-                            {{image.creator.name}}
-                        </td>
-                        <td>
-                            {{image.createdAt}}
-
-                        </td>
-                    </tr>
-
-                </table>
-            </div>
+                <tr ng-repeat="image in controller.images">
+                    <td><img ng-src="{{image.thumbnail}}" alt="{{image.title}}" class="thumbnail"></td>
+                    <td> {{image.title}}</td>
+                    <td>
+                        {{image.creator.name}}
+                    </td>
+                    <td>
+                        {{image.createdAt}}
+                    </td>
+                </tr>
+            </table>
+            <!--End: Data table-->
+        </div>
            
     </body>
 </html>
