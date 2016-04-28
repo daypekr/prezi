@@ -4,11 +4,15 @@
         .controller("galleryController", ["repository", galleryController]);
 
     function galleryController(repository) {
-
+        
+        // store 'this' to a variable to prevent side effect of closure
         var controller = this;
 
+        // set default values
         controller.search = '';
         controller.order = 'asc';
+        
+        //action methods
         controller.changeOrder = function() {
             if (controller.order === 'asc') controller.order = 'desc';
             else controller.order = 'asc';
@@ -18,7 +22,6 @@
             } else {
                 controller.defaultListing();
             }
-
         };
 
         controller.doSearch = function() {
@@ -44,6 +47,7 @@
                 });
         };
 
+        // show list for initial access
         controller.defaultListing();
     }
 }());
