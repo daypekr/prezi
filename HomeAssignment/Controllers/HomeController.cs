@@ -15,5 +15,12 @@ namespace HomeAssignment.Controllers
 
             return View();
         }
+        public ActionResult Client()
+        {
+
+
+            return View();
+        }
+       
     }
 }
